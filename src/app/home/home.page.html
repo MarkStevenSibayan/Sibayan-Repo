@@ -1,21 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Home Page - Page 1
+      Activity 1 - AppDev
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+      
 <ion-content [fullscreen]="true">
+  <ion-button href="my-custom/my-custom-page-with-id/1">Go by Link</ion-button>
+  <ion-button (click)="clickEvent()">Go by Event</ion-button>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">
-      </ion-title>
+      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-  <div id="container">
-    <ion-button (click) = "Authentication('button1')">Go by Link</ion-button>
-    <ion-button (click) = "Authentication('button2')">Go by Event</ion-button><br>
-    <ion-button (click) = "goWithAuthentication()">Authorize</ion-button>
-  </div>
 </ion-content>
