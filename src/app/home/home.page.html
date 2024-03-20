@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> 
+      <h1>Code Crafters...</h1><br>
+      Members:<br>
+      Mark Steven Sibayan<br>
+      Krisha Delacruz<br>
+      Mark Joseph Fajiculay<br>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="navigation-buttons">
+    <h1>Code Crafters</h1>
+    <p>Output:</p>
+    <div *ngIf = "isLoading"> {{LoadingText}}</div>
+    <div *ngIf = "showArr"> {{origArr}}</div>
+    <ion-button (click)="authenticate()">Authenticate</ion-button> 
+    <ion-button (click)="Unauthenticate()">UnAuthenticate</ion-button> 
+    <ion-button (click)="showObject()"> Show Object</ion-button>
+    <ion-button (click)="addObject()"> Add 1 to Object</ion-button>
+    </div>
+</ion-content>
