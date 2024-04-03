@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthenticationService {
   authenticated = false;
+  num = 0;
   constructor() { }
   canActivate() {
     return this.authenticated;

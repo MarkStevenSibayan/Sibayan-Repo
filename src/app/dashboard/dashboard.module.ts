@@ -15,6 +15,7 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
+    DashboardPageRoutingModule
   ],
   declarations: [DashboardPage]
 })

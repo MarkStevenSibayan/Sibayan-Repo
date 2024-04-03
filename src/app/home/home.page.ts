@@ -16,14 +16,16 @@ export class HomePage implements OnInit {
     private route : Router,
     private toastController:ToastController,
     private alertController: AlertController) {
-
-      
+      if(this.AuthenticationService.num == 0){
+        this.username = '';
+        this.password = '';
+      }
     }
 
-  goWithAuthentication(){
-    this.AuthenticationService.authenticated = true;
+  // goWithAuthentication(){
+  //   this.AuthenticationService.authenticated = true;
 
-  }
+  // }
 
 
   // Authentication(buttonName: string){
@@ -43,9 +45,6 @@ export class HomePage implements OnInit {
   //     this.route.navigate(['blank']);
   // }
 
-  ngOnInit(): void {
-    
-  }
 
   // ngOnDestroy(): void {
     
@@ -67,7 +66,9 @@ export class HomePage implements OnInit {
   //   console.log('You Did Leave the Home Page');
   // }
 
-
+  ngOnInit() {
+   
+  }
 
 
    username: string = ''
@@ -84,7 +85,8 @@ export class HomePage implements OnInit {
         });
         await alert.present();
         this.AuthenticationService.authenticated = true;
-        this.route.navigate(['dashboard']);
+        this.AuthenticationService.num = 1;
+        this.route.navigate(['dashboard/home']);
       } else{
         const toast = await this.toastController.create({
           message: "Login Failed",
@@ -92,7 +94,7 @@ export class HomePage implements OnInit {
         });
         toast.present();
       }
-    } else if(this.username == 'user1'){
+    } else if(this.username == 'sibayan'){
       if(this.password == '12345'){
         const alert = await this.alertController.create({
           header: "Login",
@@ -102,7 +104,8 @@ export class HomePage implements OnInit {
         });
         await alert.present();
         this.AuthenticationService.authenticated = true;
-        this.route.navigate(['dashboard']);
+        this.AuthenticationService.num = 2;
+        this.route.navigate(['dashboard/home']);
       } else{
         const toast = await this.toastController.create({
           message: "Login Failed",
@@ -118,6 +121,7 @@ export class HomePage implements OnInit {
       toast.present();
     }
   }
+
 
 }
   
