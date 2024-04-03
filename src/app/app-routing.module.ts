@@ -7,27 +7,27 @@ import { DashboardPage } from './dashboard/dashboard.page';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'page2',
-    loadChildren: () => import('./my-custom-page/my-custom-page.module').then( m => m.MyCustomPagePageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
-  {
-    path: 'another',
-    component: AnotherPage,
-    canActivate: [AuthenticationService]
-  },
-  {
-    path: 'blank',
-    component: customPage
-  },
+  // {
+  //   path: 'page2',
+  //   loadChildren: () => import('./my-custom-page/my-custom-page.module').then( m => m.MyCustomPagePageModule)
+  // },
+  // {
+  //   path: 'another',
+  //   component: AnotherPage,
+  //   canActivate: [AuthenticationService]
+  // },
+  // {
+  //   path: 'blank',
+  //   component: customPage
+  // },
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardPageModule),

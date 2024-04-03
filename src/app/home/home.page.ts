@@ -70,7 +70,6 @@ export class HomePage implements OnInit {
    
   }
 
-
    username: string = ''
    password: string = ''
 
@@ -121,7 +120,5 @@ export class HomePage implements OnInit {
       toast.present();
     }
   }
-
-
 }
   
