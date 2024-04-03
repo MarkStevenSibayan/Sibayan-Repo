@@ -1,3 +1,31 @@
 <ion-content [fullscreen]="true">
-  Calculator
+  <div class="ion-text-center ion-padding">
+    <h3 style="color: aqua; font-family: monospace; margin-bottom: 10px;">CALCULATOR</h3>
+  </div>
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+    <div class="history" id="history">
+      History:<br> 
+
+    </div>
+    <div class="buttons">
+        <button (click)="Input('7')">7</button>
+        <button (click)="Input('8')">8</button>
+        <button (click)="Input('9')">9</button>
+        <button (click)="Input('/')">/</button>
+        <button (click)="Input('4')">4</button>
+        <button (click)="Input('5')">5</button>
+        <button (click)="Input('6')">6</button>
+        <button (click)="Input('*')">*</button>
+        <button (click)="Input('1')">1</button>
+        <button (click)="Input('2')">2</button>
+        <button (click)="Input('3')">3</button>
+        <button (click)="Input('-')">-</button>
+        <button (click)="Input('0')">0</button>
+        <button (click)="Input('.')">.</button>
+        <button (click)="Compute()">=</button>
+        <button (click)="Input('+')">+</button>
+        <button (click)="Clear()">C</button>
+    </div>
+</div>
 </ion-content>

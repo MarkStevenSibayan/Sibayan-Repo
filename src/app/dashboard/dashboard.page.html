@@ -1,127 +1,29 @@
+
 <ion-header>
   <ion-toolbar >
-    <ion-title class="ion-text-center ion-padding" style="color: rgb(24, 193, 245); text-align: center; font-family: sans-serif;">Welcome {{user}}</ion-title>
+    <ion-title style="color: rgb(24, 193, 245); text-align: center; font-family: sans-serif;">Welcome {{user}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button (click)="goToHome()">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button (click)="goToCalculator()">
-      <ion-icon name="apps"></ion-icon>
-      <ion-label>Calculator</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
-
       <ion-content [fullscreen]="true">
 
-        <div class="ion-text-center ion-padding">
-          <ion-button (click)="logout()" color="danger">Logout</ion-button>
-        </div>
 
-        <pre class="ion-text-center ion-padding" style="font-size: 20px; color: aqua;">Component Used in this Activity</pre>
-        
-        <div class="ion-text-center ion-padding">
-          <ion-list> 
-            <ion-item>
-              <ion-icon name="heart"></ion-icon>
-              Buttons
-            </ion-item>
-            <ion-item>
-              <ion-icon name="card"></ion-icon>
-              Card
-            </ion-item>
-            <ion-item>
-              <ion-icon name="square"></ion-icon>
-              Lists
-            </ion-item>
-            <ion-item>
-              <ion-icon name="star"></ion-icon>
-              Tabs
-            </ion-item>
-            <ion-item>
-              <ion-icon name="medal"></ion-icon>
-              Modal
-            </ion-item>
-            <ion-item>
-              <ion-icon name="alert"></ion-icon>
-              Alert
-            </ion-item>
-            <ion-item>
-              <ion-icon name="warning"></ion-icon>
-              Toast
-            </ion-item>
-            <ion-item>
-              <ion-icon name="triangle"></ion-icon>
-              Slider
-            </ion-item>
-            <ion-item>
-              <ion-icon name="folder"></ion-icon>
-              Icons
-            </ion-item>
-            <ion-item>
-              <ion-icon name="heart"></ion-icon>
-              Fab
-            </ion-item>
-            <ion-item>
-              <ion-icon name="medal"></ion-icon>
-              Toogle
-            </ion-item>
-          </ion-list>
-        </div>
-        
-
-        <ion-range min="0" max="100">Volume</ion-range>
-
-        <section>
-          <ion-fab vertical="" horizontal="end" slot="fixed">
-            <ion-fab-button>
-                <ion-icon name="add"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-list side="top">
-                <ion-fab-button>
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </ion-fab-button>
-                <ion-fab-button>
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </ion-fab-button>
-                <ion-fab-button>
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </ion-fab-button>
-            </ion-fab-list>
-          </ion-fab>
-        </section>
-
-        <div class="ion-text-center ion-padding">
-          <ion-button color="secondary">Secondary Button</ion-button>
-        <ion-button color="medium">Medium Button</ion-button>
-        <ion-button color="danger">Danger Button</ion-button><br>
-        <ion-button (click)="alert()">Alert Button</ion-button><br>
-        <ion-button (click)="toast()" color="tertiary">Toast Button</ion-button>
-        <ion-button (click)="closetoast()" color="danger">CloseToast</ion-button>
-        <ion-button (click)="closemodal()">Close Modal</ion-button>
-        <ion-toggle [(ngModel)]="condition"></ion-toggle>
-        </div>
-
-
-        <ion-card class="ion-text-center ion-padding">
-          <ion-card-header>
-              My name is Mark Steven Sibayan
-          </ion-card-header>
-          <ion-card-content>
-              This is my Activity 5
-          </ion-card-content>
-        </ion-card>
-
-        
-        
       </ion-content>
-  
+
+      <ion-tabs style="z-index: 1;">
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button (click)="goToHome()">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button (click)="goToCalculator()">
+            <ion-icon name="apps"></ion-icon>
+            <ion-label>Calculator</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+
 
 
 

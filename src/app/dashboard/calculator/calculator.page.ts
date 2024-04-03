@@ -18,4 +18,22 @@ export class CalculatorPage implements OnInit {
       
     }
 
+  Input(value: string): void {
+      const display = document.getElementById('display') as HTMLInputElement;
+      display.value += value;
+  }
+  
+  Clear(): void {
+      const display = document.getElementById('display') as HTMLInputElement;
+      display.value = '';
+  }
+  
+  Compute(): void {
+      const display = document.getElementById('display') as HTMLInputElement;
+      const expression: string = display.value;
+      const result: string = eval(expression);
+      display.value = result;
+      const history = document.getElementById('history') as HTMLDivElement;
+      history.innerHTML += `${expression} = ${result}<br>`;
+  }
 }
