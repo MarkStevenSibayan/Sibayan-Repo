@@ -19,11 +19,10 @@ const routes: Routes = [
   //   path: 'page2',
   //   loadChildren: () => import('./my-custom-page/my-custom-page.module').then( m => m.MyCustomPagePageModule)
   // },
-  // {
-  //   path: 'another',
-  //   component: AnotherPage,
-  //   canActivate: [AuthenticationService]
-  // },
+  {
+    path: 'another-page',
+    component: AnotherPage,
+  },
   // {
   //   path: 'blank',
   //   component: customPage

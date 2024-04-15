@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'another.page.html',
 })
 export class AnotherPage {
-
+  assignmentMessage = "Hello, We are the CodeCrafters";
   constructor() { }
 
 
