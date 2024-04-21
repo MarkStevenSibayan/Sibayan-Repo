@@ -1,0 +1,50 @@
+#container {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  background-image: linear-gradient(to bottom, #7e5220, #c96412);
+  border: 3px solid green;
+  border-radius: 10px 100px / 120px 100px;
+  width: 350px;
+  height: 300px;
+  color: White;
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 30px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 20px;
+  line-height: 22px;
+
+  color: #000000;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.image{
+  display: flex;
+  justify-self: center;
+}
+
+p{
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
