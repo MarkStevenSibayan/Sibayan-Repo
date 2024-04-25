@@ -7,9 +7,15 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SignupPage } from './signup/signup.page';
+import { environment } from 'src/environments/environment';
+import { initializeApp } from 'firebase/app';
+import { DashboardPage } from './dashboard/dashboard.page';
+import { LoginPage } from './login/login.page';
+import { HomePage } from './home/home.page';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DashboardPage, HomePage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: !isDevMode(),
   // Register the ServiceWorker as soon as the application is stable
@@ -19,4 +25,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  app = initializeApp(environment.firebaseConfig);
+}
