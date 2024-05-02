@@ -1,8 +1,44 @@
 
 <ion-content [fullscreen]="true" style="color: beige;">
-  
-  <div id="container">
-    <strong>Welcome To My HomePage</strong>
-    <p><br>My name is Mark Steven Sibayan Nice to Meet You!!!</p>
+<img class="background">
+
+  <div id="container" style="z-index: 999;">
+    <h1 style="z-index: 999;">Crud</h1>
+    <ion-item>
+      <ion-label position="floating">FirstName</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">MiddleName</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">LastName</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-button onclick="save()" color="success">Save</ion-button>
+    <ion-button onclick="delete(user)" color="danger" *ngIf="user.id">Delete</ion-button>
+    <br>
+
+    <h2 style="z-index: 9999;">UserList</h2>
+    <table *ngIf="isLoading" style="z-index: 9999; font-size: 13px;">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>MiddleName</th>
+          <th>LastName</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{user.firstName}}</td>
+          <td>{{user.middleName}}</td>
+          <td>{{user.lastName}}</td>
+          <td><ion-button color="warning" (click)="edit(user)">Edit</ion-button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </ion-content>

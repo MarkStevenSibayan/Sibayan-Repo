@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  authenticated = false;
+  authenticated = true;
   constructor(private route: Router) { }
   
   canActivate(){

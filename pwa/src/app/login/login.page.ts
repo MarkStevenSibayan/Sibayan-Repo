@@ -26,9 +26,9 @@ export class LoginPage implements OnInit {
     .then((userCredential) => {
       const user = userCredential.user
       this.authenticationService.setAuthentication(true);
-      this.presentAlert('Success', 'Welcome To My Dashboard User!');
+      this.presentAlert('Success', 'Welcome To My HomePage User!');
       this.authenticationService.authenticated = true;
-      this.route.navigate(['dashboard']);
+      this.route.navigate(['home']);
     })
     .catch((error) => {
       const errorCode = error.code;

@@ -13,6 +13,8 @@ import { initializeApp } from 'firebase/app';
 import { DashboardPage } from './dashboard/dashboard.page';
 import { LoginPage } from './login/login.page';
 import { HomePage } from './home/home.page';
+import { getFirestore } from 'firebase/firestore';
+
 
 @NgModule({
   declarations: [AppComponent, DashboardPage, HomePage],
@@ -27,4 +29,5 @@ import { HomePage } from './home/home.page';
 })
 export class AppModule {
   app = initializeApp(environment.firebaseConfig);
+  firestore = getFirestore(this.app)
 }
