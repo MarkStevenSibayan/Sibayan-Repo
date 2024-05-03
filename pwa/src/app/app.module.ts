@@ -18,7 +18,7 @@ import { getFirestore } from 'firebase/firestore';
 
 @NgModule({
   declarations: [AppComponent, DashboardPage, HomePage],
-  imports: [FormsModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {
+  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', {
   enabled: !isDevMode(),
   // Register the ServiceWorker as soon as the application is stable
   // or after 30 seconds (whichever comes first).
