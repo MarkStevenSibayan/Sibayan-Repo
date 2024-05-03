@@ -1,38 +1,42 @@
 
-<ion-content [fullscreen]="true" style="color: beige;">
+<!-- <ion-content [fullscreen]="true" style="color: beige;">
 <img class="background">
+<ion-button (click)="logout()" color="danger">Logout</ion-button>
+<ion-button (click)="navigate()" color="success">Activity 9</ion-button>
 
   <div id="container" style="z-index: 999;">
     <h1 style="z-index: 999;">Crud</h1>
-    <ion-item>
-      <ion-label position="floating">FirstName</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item> 
-    <ion-item>
-      <ion-label position="floating">MiddleName</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">LastName</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
 
-    <ion-button onclick="save()" color="success">Save</ion-button>
-    <ion-button onclick="delete(user)" color="danger" *ngIf="user.id">Delete</ion-button>
+      <ion-item>
+        <ion-label position="floating">FirstName</ion-label>
+        <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-label position="floating">MiddleName</ion-label>
+        <ion-input type="text" [(ngModel)]="user.middleName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">LastName</ion-label>
+        <ion-input type="text" [(ngModel)]="user.lastName"></ion-input>
+      </ion-item>
+
+
+    <ion-button (click)="save()" color="success">Save</ion-button>
+    <ion-button (click)="delete(user)" color="danger" *ngIf="user.id">Delete</ion-button>
     <br>
 
     <h2 style="z-index: 9999;">UserList</h2>
-    <table *ngIf="isLoading" style="z-index: 9999; font-size: 13px;">
+    <table *ngIf="!isLoading" class="table">
       <thead>
         <tr>
-          <th>FirstName</th>
-          <th>MiddleName</th>
-          <th>LastName</th>
+          <th>F_Name</th>
+          <th>M_Name</th>
+          <th>L_Name</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let user of userList">
           <td>{{user.firstName}}</td>
           <td>{{user.middleName}}</td>
           <td>{{user.lastName}}</td>
@@ -41,4 +45,66 @@
       </tbody>
     </table>
   </div>
-</ion-content>
+</ion-content> -->
+
+<ion-content [fullscreen]="true" style="color: beige;">
+  <img class="background">
+  <ion-button (click)="logout()" color="danger">Logout</ion-button>
+  <ion-button (click)="navigate()" color="success">Activity 9</ion-button>
+  
+    <div id="container" style="z-index: 999;">
+      <h1 class="title">"Milktea Shop"</h1>
+      <h6 class="title">Order to our Shop Now!!</h6>
+  
+        <ion-item>
+          <ion-label position="floating" color="primary">Flavor</ion-label>
+          <ion-input type="text" [(ngModel)]="user.flavor" aria-required="true"></ion-input>
+        </ion-item> 
+        <ion-item>
+          <ion-label position="floating" color="primary">Price</ion-label>
+          <ion-input type="text" [(ngModel)]="user.price" aria-required="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">AddOns <i>True or False</i> </ion-label>
+          <ion-input type="text" [(ngModel)]="user.addOns" aria-required="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">WhatAddOns</ion-label>
+          <ion-input type="text" [(ngModel)]="user.whatAddOns" aria-required="true"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="primary">Mobile Number <i>+63</i></ion-label>
+          <ion-input type="text" [(ngModel)]="user.mobileNum" aria-required="true"></ion-input>
+        </ion-item>
+  
+  
+      <ion-button (click)="save()" color="success">Save</ion-button>
+      <ion-button (click)="delete(user)" color="danger" *ngIf="user.id">Delete</ion-button>
+      <br>
+  
+      <h2 class="title">OrderList</h2>
+      <h6 class="title">Refresh Upon Update/Delete</h6>
+      <table *ngIf="!isLoading" class="table">
+        <thead>
+          <tr>
+            <th>flavor </th>
+            <th>price </th>
+            <th>addOns </th>
+            <th>whatAddOns </th>
+            <th>mobileNum </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userList">
+            <td>{{user.flavor}}</td>
+            <td>{{user.price}}</td>
+            <td>{{user.addOns}}</td>
+            <td>{{user.whatAddOns}}</td>
+            <td>{{user.mobileNum}}</td>
+            <td><ion-button color="primary" (click)="edit(user)">Edit</ion-button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ion-content>

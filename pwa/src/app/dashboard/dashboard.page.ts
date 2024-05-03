@@ -12,7 +12,7 @@ export class DashboardPage implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private route: Router
-  ) { }
+  ) { this.authenticationService.authenticated=false;}
 
   ngOnInit() {
     this.authenticationService.authenticated = false;
@@ -21,6 +21,11 @@ export class DashboardPage implements OnInit {
   logout(){
     this.authenticationService.authenticated = false;
     this.route.navigate(['login']);
+  }
+
+  navigateCrud(){
+    this.authenticationService.authenticated=true;
+    this.route.navigate(['home'])
   }
 
 }

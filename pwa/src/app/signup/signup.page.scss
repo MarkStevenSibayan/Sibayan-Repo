@@ -3,22 +3,25 @@
     z-index: 0;
     top: auto;
     right: auto;
-    width: 100vw;
-    height: 104vh;
+    width: 120%;
+    height: 120%;
     background-image: url(../dashboard/ImageFolder/background.jpg);
     background-size: cover;
 }
 
 .login-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
     color: black;
     background-color: #fff;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    z-index: 999;
 }
 
 h2 {
@@ -53,10 +56,10 @@ button:hover {
 
 .loginText{
     position: absolute;
-    top: 0%;
-    left: 100px;
+    top: 130px;
+    left: 125px;
     z-index: 100;
-    color: aqua; 
+    color: rgb(9, 206, 59); 
     font-family:Impact;
     padding-top: 10px; 
     padding-bottom: 50px; 

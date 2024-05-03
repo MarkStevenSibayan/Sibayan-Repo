@@ -4,6 +4,7 @@ import { addDoc, collection, getFirestore, getDocs, updateDoc, deleteDoc, doc } 
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
 import { User, iUser } from './home.model';
+import { HomePage } from './home.page';
 
 @Injectable({
     providedIn: 'root'
@@ -22,29 +23,34 @@ export class HomeService {
         const user = doc.data() as User;
         user.id = doc.id;
         users.push(user);
-        // console.log(`${doc.id} => ${doc.data()}`);
-        // console.log(doc.data());
+        console.log(`${doc.id} => ${doc.data()}`);
+        console.log(doc.data());
     });
     return users;
   }
 
-  async tryAdd(user: User){
+  async Add(user: User){
     const app = initializeApp(environment.firebaseConfig);
     const firestore = getFirestore(app);
 
     try{
         //method 1
-        const docRefM1 = await addDoc(collection(firestore, "users"), {
-            firstName: user.firstName,
-            middleName: user.middleName,
-            lastName: user.lastName,
-        })
+        const doc = await addDoc(collection(firestore, "users"), {
+          flavor: user.flavor,
+          price: user.price,
+          addOns: user.addOns,
+          whatAddOns: user.whatAddOns,
+          mobileNum: user.mobileNum
+            // firstName: user.firstName,
+            // middleName: user.middleName,
+            // lastName: user.lastName,
+        });
         //method 2
         // const docRefM2 = await addDoc(collection(firestore, "users"),
         // user
         //  );
 
-        console.log("Document written with ID: ", docRefM1.id)
+        console.log("Document written with ID: ", doc.id)
         
     } catch (e) {
         console.error("Error adding Document: ", e)
@@ -52,29 +58,34 @@ export class HomeService {
 
   }
 
-  async tryUpdate(user: User){
+  async Update(user: User){
     const app = initializeApp(environment.firebaseConfig);
     const firestore = getFirestore(app);
 
     try{
         const docRef = doc(firestore, "users", user.id);
         await updateDoc(docRef, {
-            firstName: user.firstName,
-            middleName: user.middleName,
-            lastName: user.lastName,
+          flavor: user.flavor,
+          price: user.price,
+          addOns: user.addOns,
+          whatAddOns: user.whatAddOns,
+          mobileNum: user.mobileNum
+            // firstName: user.firstName,
+            // middleName: user.middleName,
+            // lastName: user.lastName,
         })
     } catch (e) {
         console.error("Error adding Document: ", e)
     }
   }
 
-  async tryDelete(user: User){
+  async Delete(user: User){
     const app = initializeApp(environment.firebaseConfig);
     const firestore = getFirestore(app);
 
     try{
-        const docRef = doc(firestore, "user", user.id)
-        await deleteDoc(docRef);
+        const docu = doc(firestore, "users", user.id)
+        await deleteDoc(docu);
     } catch (e) {
         console.error("Error adding Document: ", e)
     }
